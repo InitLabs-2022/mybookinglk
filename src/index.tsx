@@ -3,13 +3,34 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { ThemeProvider } from '@emotion/react';
+import { createTheme, CssBaseline } from '@mui/material';
+import { red } from '@mui/material/colors';
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
+
+const theme = createTheme({
+  palette: {
+    primary: {
+      main: '#0a36f8',
+    },
+    secondary: {
+      main: '#ffd000',
+    },
+    error: {
+      main: red.A400,
+    },
+  },
+});
+
 root.render(
   <React.StrictMode>
-    <App />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
   </React.StrictMode>
 );
 
