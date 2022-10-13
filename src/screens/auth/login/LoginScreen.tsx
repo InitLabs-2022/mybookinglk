@@ -1,6 +1,7 @@
 import { Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const isEmail = (val: string) => {
   return /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(val);
@@ -57,6 +58,9 @@ const LoginScreen = () => {
             />
             <Button type="submit" variant="contained">
               LOGIN
+            </Button>
+            <Button type="submit" variant="text" style={{marginTop: 10}} component={Link} to="/signup">
+              SIGN UP NOW
             </Button>
           </form>
         )}
